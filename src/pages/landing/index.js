@@ -7,11 +7,14 @@ const green = '#73c383'
 const dotColors = ['white', primaryColor, yellow, green]
 const StyledCarousel = styled(Carousel)`
     .slick-list{
-        height:100vh;
+        height:100vh !important;
         overflow: hidden;
     }
     .slick-dots {
         right:68px;
+    }
+    .slick-slide {
+        border:none !important;
     }
     .slick-dots li button {
         width:16px;
@@ -44,17 +47,17 @@ export default class BlogIndexPage extends React.Component {
     componentWillUnmount() {
         window.removeEventListener('wheel', this.handleScroll);
     }
-    handleScroll = (e)=>{
+    handleScroll = (e) => {
         let delta;
-        if (e.wheelDelta){
+        if (e.wheelDelta) {
             delta = e.wheelDelta;
-        }else{
+        } else {
             delta = -1 * e.deltaY;
         }
 
-        if (delta < 0){
+        if (delta < 0) {
             this.slider.next();
-        }else if (delta > 0){
+        } else if (delta > 0) {
             this.slider.prev();
         }
     }
@@ -62,16 +65,11 @@ export default class BlogIndexPage extends React.Component {
         const { currentColor } = this.state
         return (
             <div onScroll={(x) => console.log(x)}>
-                <StyledCarousel afterChange={(slide) => this.setState({ currentColor: dotColors[slide] })} color={currentColor} ref={slider => (this.slider = slider)} vertical>
-                    <CarouselItem color={'#313846'}><h3><input
-                        onChange={e => this.slider.goTo(e.target.value)}
-                        type="range"
-                        min={0}
-                        max={3}
-                    /></h3></CarouselItem>
-                    <CarouselItem color={'white'}><h3>2</h3></CarouselItem>
-                    <CarouselItem color={'#313846'}><h3>3</h3></CarouselItem>
-                    <CarouselItem color={'white'}><h3>4</h3></CarouselItem>
+                <StyledCarousel beforeChange={(before,slide) => this.setState({ currentColor: dotColors[slide] })} color={currentColor} ref={slider => (this.slider = slider)} vertical>
+                    <CarouselItem color={'#313846'}></CarouselItem>
+                    <CarouselItem color={'white'}></CarouselItem>
+                    <CarouselItem color={'#313846'}></CarouselItem>
+                    <CarouselItem color={'white'}></CarouselItem>
                 </StyledCarousel>
             </div>
         )
