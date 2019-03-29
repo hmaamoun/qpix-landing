@@ -4,7 +4,7 @@ html {
 
   .ant-carousel .slick-slide {
     text-align: center;
-    background: #364d79;
+    /* background: #364d79; */
   }
   
   .ant-carousel .slick-slide h3 {
