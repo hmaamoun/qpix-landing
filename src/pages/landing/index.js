@@ -64,7 +64,7 @@ export default class BlogIndexPage extends React.Component {
     render() {
         const { currentColor } = this.state
         return (
-            <div onScroll={(x) => console.log(x)}>
+            <div>
                 <StyledCarousel beforeChange={(before,slide) => this.setState({ currentColor: dotColors[slide] })} color={currentColor} ref={slider => (this.slider = slider)} vertical>
                     <CarouselItem color={'#313846'}></CarouselItem>
                     <CarouselItem color={'white'}></CarouselItem>
