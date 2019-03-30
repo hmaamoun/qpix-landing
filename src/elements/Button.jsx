@@ -14,6 +14,10 @@ const StyledButton = styled(AntdButton)`
                 color:${props.theme.primary};
                 transform: scale(1.1);
             }
+            &:focus{
+                background-color:${props.theme.secondary};
+                color:${props.theme.primary};
+            }
         `):('')}
         line-height:22px;
         font-weight:bold;

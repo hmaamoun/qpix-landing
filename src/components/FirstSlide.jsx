@@ -35,11 +35,36 @@ const Description = styled(Text)`
     font-size:22px;
     max-width:640px;
 `
+const SlideBackground = styled.img`
+    object-fit: cover;
+    object-position:top;
+    height: 100vh;
+    width:100%;
+`
+const BackgroundWrapper = styled.div`
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    &:before{
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(52, 59, 72, 0.95);
+        transition: all .3s linear;
+    }
+`
 class FirstSlide extends PureComponent {
     render() {
         return (
             <React.Fragment>
                 <HeaderColors />
+                <BackgroundWrapper>
+                    <SlideBackground src={'https://images.pexels.com/photos/1432942/pexels-photo-1432942.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'} />
+                </BackgroundWrapper>
                 <Container >
                     <Header />
                     <Row>
