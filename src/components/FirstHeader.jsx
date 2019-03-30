@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Row, Col } from 'antd';
 import styled from 'styled-components';
+import LogoImage from '../assets/img/qpix-logo.png'
 const Logo = styled.img`
     height:50px;
 `
@@ -9,10 +10,7 @@ class FirstHeader extends Component {
         return (
             <Row className={this.props.className}>
                 <Col span={6}>
-                    {/* <h1 style={{ textAlign: 'left', color: 'white' }}>
-                        Header Logo
-                                </h1> */}
-                    <Logo alt="logo" src={'/img/qpix-logo.png'} />
+                    <Logo alt="logo" src={LogoImage} />
                 </Col>
                 <Col span={18}>
                     <h1 style={{ textAlign: 'right', color: 'white' }}>
