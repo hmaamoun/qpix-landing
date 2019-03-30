@@ -5,6 +5,7 @@ const StyledButton = styled(AntdButton)`
     &&{
         width:${props => props.block ? ('100%') : ('auto')};
         float:${props => props.float || 'none'};
+        margin:${props => props.margin || 'auto'};
         font-size:22px;
         ${props=>props.type==="primary"?(`
             background-color:${props.theme.secondary};

@@ -10,11 +10,12 @@ const Header = styled(FirstHeader)`
 const Container = styled.div`
     padding: 45px 65px;
     height:100%;
+    position: relative;
 `
 const Text = styled.h1`
     text-align:left;
     color:white;
-    margin-bottom:14px;
+    margin-bottom:0px;
 `
 const Line1 = styled(Text)`
     font-size:36px;
@@ -53,20 +54,37 @@ const BackgroundWrapper = styled.div`
         bottom: 0;
         left: 0;
         right: 0;
-        background-color: rgba(52, 59, 72, 0.95);
+        background-color: rgba(43, 51, 66, 0.96);
         transition: all .3s linear;
     }
+`
+const SlideCounter = styled.div`
+    top: 50%;
+    right: 0;
+    width: 77px;
+    border-bottom: 2px solid white;
+    position: absolute;
+    -webkit-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-187%);
+    color: white;
+    font-size:24px;
 `
 class FirstSlide extends PureComponent {
     render() {
         return (
             <React.Fragment>
                 <HeaderColors />
+
                 <BackgroundWrapper>
                     <SlideBackground src={'https://images.pexels.com/photos/1432942/pexels-photo-1432942.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'} />
                 </BackgroundWrapper>
                 <Container >
                     <Header />
+                    <SlideCounter>
+                        01
+                </SlideCounter>
                     <Row>
                         <Col span={16}>
 
@@ -87,7 +105,7 @@ class FirstSlide extends PureComponent {
                     </Row>
                     <Row>
                         <Col span={6}>
-                            <Button float={'left'} type="primary">
+                            <Button margin={'12px 0'} float={'left'} type="primary">
                                 Start a Project
                             </Button>
                         </Col>
