@@ -1,6 +1,7 @@
 import React from 'react'
 import { Carousel } from 'antd';
-import styled from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
+import FirstSlide from '../../components/FirstSlide';
 const primaryColor = '#343b48';
 const yellow = '#ede125';
 const green = '#73c383'
@@ -11,7 +12,7 @@ const StyledCarousel = styled(Carousel)`
         overflow: hidden;
     }
     .slick-dots {
-        right:68px;
+        right:82px;
     }
     .slick-slide {
         border:none !important;
@@ -64,14 +65,24 @@ export default class BlogIndexPage extends React.Component {
     render() {
         const { currentColor } = this.state
         return (
-            <div>
-                <StyledCarousel beforeChange={(before,slide) => this.setState({ currentColor: dotColors[slide] })} color={currentColor} ref={slider => (this.slider = slider)} vertical>
-                    <CarouselItem color={'#313846'}></CarouselItem>
+            <ThemeProvider theme={{
+                logoRed: '#ed8485',
+                logoYellow: '#ece025',
+                logoGreen: '#73c383',
+                logoBlue: '#6786c3',
+                primary:primaryColor,
+                secondary:yellow,
+                tertiary:green
+            }}>
+                <StyledCarousel beforeChange={(before, slide) => this.setState({ currentColor: dotColors[slide] })} color={currentColor} ref={slider => (this.slider = slider)} vertical>
+                    <CarouselItem color={'#313846'}>
+                        <FirstSlide />
+                    </CarouselItem>
                     <CarouselItem color={'white'}></CarouselItem>
                     <CarouselItem color={'#313846'}></CarouselItem>
                     <CarouselItem color={'white'}></CarouselItem>
                 </StyledCarousel>
-            </div>
+            </ThemeProvider>
         )
     }
 }

@@ -1,7 +1,23 @@
-html {
-  overflow-y: auto;
+@font-face {
+  font-family: Panton;
+  src: url('./fonts/Panton-Regular.otf');
+  font-weight: normal;
 }
 
+@font-face {
+  font-family: Panton;
+  src: url('./fonts/Panton-Bold.otf');
+  font-weight: bold;
+}
+@font-face {
+  font-family: Panton;
+  src: url('./fonts/Panton-Black.otf');
+  font-weight: 900;
+}
+body {
+  overflow-y: auto;
+  font-family: Panton !important;
+}
 .ant-carousel .slick-slide {
   text-align: center;
   /* background: #364d79; */
