@@ -35,6 +35,22 @@ const StyledCarousel = styled(Carousel)`
 const CarouselItem = styled.div`
     height:100vh;
     background:${props => props.color};
+    position:relative;
+`
+
+const SlideCounter = styled.div`
+    top: 50%;
+    z-index:999;
+    right: 0;
+    width: 68px;
+    border-bottom: 2px solid ${props => props.color};
+    position: absolute;
+    -webkit-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(${props => props.translation}%);
+    color: ${props => props.color};
+    font-size:24px;
 `
 export default class BlogIndexPage extends React.Component {
     state = {
@@ -62,6 +78,9 @@ export default class BlogIndexPage extends React.Component {
             this.slider.prev();
         }
     }
+    handleJumpClick = (slideNumber) => {
+        this.slider.goTo(slideNumber);
+    }
     render() {
         const { currentColor } = this.state
         return (
@@ -70,17 +89,24 @@ export default class BlogIndexPage extends React.Component {
                 logoYellow: '#ece025',
                 logoGreen: '#73c383',
                 logoBlue: '#6786c3',
-                primary:primaryColor,
-                secondary:yellow,
-                tertiary:green
+                primary: primaryColor,
+                secondary: yellow,
+                tertiary: green
             }}>
                 <StyledCarousel beforeChange={(before, slide) => this.setState({ currentColor: dotColors[slide] })} color={currentColor} ref={slider => (this.slider = slider)} vertical>
                     <CarouselItem color={'#313846'}>
-                        <FirstSlide />
+                        <SlideCounter translation={'-180'} color={dotColors[0]}>01</SlideCounter>
+                        <FirstSlide onJumpClick={this.handleJumpClick} />
                     </CarouselItem>
-                    <CarouselItem color={'white'}></CarouselItem>
-                    <CarouselItem color={'#313846'}></CarouselItem>
-                    <CarouselItem color={'white'}></CarouselItem>
+                    <CarouselItem color={'white'}>
+                        <SlideCounter translation={'-120'} color={dotColors[1]}>02</SlideCounter>
+                    </CarouselItem>
+                    <CarouselItem color={'#313846'}>
+                        <SlideCounter translation={'-59'}  color={dotColors[2]}>03</SlideCounter>
+                    </CarouselItem>
+                    <CarouselItem color={'white'}>
+                        <SlideCounter translation={'2'}  color={dotColors[3]}>04</SlideCounter>
+                    </CarouselItem>
                 </StyledCarousel>
             </ThemeProvider>
         )

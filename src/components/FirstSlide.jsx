@@ -81,10 +81,8 @@ class FirstSlide extends PureComponent {
                     <SlideBackground src={'https://images.pexels.com/photos/1432942/pexels-photo-1432942.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'} />
                 </BackgroundWrapper>
                 <Container >
-                    <Header />
-                    <SlideCounter>
-                        01
-                </SlideCounter>
+                    <Header {...this.props} />
+                    
                     <Row>
                         <Col span={16}>
 
