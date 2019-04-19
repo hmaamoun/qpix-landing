@@ -58,19 +58,6 @@ const BackgroundWrapper = styled.div`
         transition: all .3s linear;
     }
 `
-const SlideCounter = styled.div`
-    top: 50%;
-    right: 0;
-    width: 77px;
-    border-bottom: 2px solid white;
-    position: absolute;
-    -webkit-transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-187%);
-    color: white;
-    font-size:24px;
-`
 class FirstSlide extends PureComponent {
     render() {
         return (

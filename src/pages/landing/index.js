@@ -2,6 +2,8 @@ import React from 'react'
 import { Carousel } from 'antd';
 import styled, { ThemeProvider } from 'styled-components';
 import FirstSlide from '../../components/FirstSlide';
+import SecondSlide from '../../components/SecondSlide';
+import FinalSlide from '../../components/FinalSlide';
 const primaryColor = '#343b48';
 const yellow = '#ede125';
 const green = '#73c383'
@@ -98,14 +100,16 @@ export default class BlogIndexPage extends React.Component {
                         <SlideCounter translation={'-180'} color={dotColors[0]}>01</SlideCounter>
                         <FirstSlide onJumpClick={this.handleJumpClick} />
                     </CarouselItem>
-                    <CarouselItem color={'white'}>
+                    <CarouselItem color={'#f6f6f6'}>
                         <SlideCounter translation={'-120'} color={dotColors[1]}>02</SlideCounter>
+                        <SecondSlide />
                     </CarouselItem>
                     <CarouselItem color={'#313846'}>
                         <SlideCounter translation={'-59'}  color={dotColors[2]}>03</SlideCounter>
                     </CarouselItem>
                     <CarouselItem color={'white'}>
                         <SlideCounter translation={'2'}  color={dotColors[3]}>04</SlideCounter>
+                        <FinalSlide/>
                     </CarouselItem>
                 </StyledCarousel>
             </ThemeProvider>
