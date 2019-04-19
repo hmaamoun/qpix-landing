@@ -74,7 +74,7 @@ export default class BlogIndexPage extends React.Component {
         } else {
             delta = -1 * e.deltaY;
         }
-        if(Math.abs(delta) <70){
+        if(Math.abs(delta) <40){
             return;
         }
         if (delta < 0) {
