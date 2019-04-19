@@ -53,6 +53,7 @@ const SlideCounter = styled.div`
     transform: translateY(${props => props.translation}%);
     color: ${props => props.color};
     font-size:24px;
+    font-weight:bold;
 `
 export default class BlogIndexPage extends React.Component {
     state = {
@@ -101,11 +102,11 @@ export default class BlogIndexPage extends React.Component {
                         <FirstSlide onJumpClick={this.handleJumpClick} />
                     </CarouselItem>
                     <CarouselItem color={'#f6f6f6'}>
-                        <SlideCounter translation={'-120'} color={dotColors[1]}>02</SlideCounter>
+                        <SlideCounter translation={'-119'} color={dotColors[1]}>02</SlideCounter>
                         <SecondSlide />
                     </CarouselItem>
                     <CarouselItem color={'#313846'}>
-                        <SlideCounter translation={'-59'}  color={dotColors[2]}>03</SlideCounter>
+                        <SlideCounter translation={'-58'}  color={dotColors[2]}>03</SlideCounter>
                     </CarouselItem>
                     <CarouselItem color={'white'}>
                         <SlideCounter translation={'2'}  color={dotColors[3]}>04</SlideCounter>
