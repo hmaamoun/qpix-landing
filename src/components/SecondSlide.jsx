@@ -9,6 +9,7 @@ const Container = styled.div`
     padding: 0 80px;
     height:100%;
     position: relative;
+    overflow-y:scroll;
     .ant-card-meta-description{
         font-size:20px;
     }
