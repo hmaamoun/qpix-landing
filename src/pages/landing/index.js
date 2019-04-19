@@ -73,7 +73,9 @@ export default class BlogIndexPage extends React.Component {
         } else {
             delta = -1 * e.deltaY;
         }
-
+        if(Math.abs(delta) <70){
+            return;
+        }
         if (delta < 0) {
             this.slider.next();
         } else if (delta > 0) {
